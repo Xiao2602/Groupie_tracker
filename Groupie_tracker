@@ -1,0 +1,45 @@
+Introduction
+
+Le Groupie Tracker est un projet permettant d’importer des informations via un API pour l’afficher sur une page web à travers le langage GO. Ce projet nous a permis de développer nos compétences en programmation et nos connaissances sur l’utilisation de l’API. 
+
+Pour mener à bien ce projet, nous avons utilisé plusieurs technologies, dont Go pour le traitement des données et la communication avec l’API, ainsi que HTML et CSS pour la conception et le style de l’interface.
+Dans le cadre de ce travail, notre objectif a été de présenter les personnages de la célèbre série animée Rick et Morty. Grâce aux données récupérées via l’API correspondante, nous avons pu structurer et afficher des informations détaillées sur chaque personnage, améliorant ainsi notre compréhension de l’intégration d’API dans un projet web.
+------------------
+Présentation de la page d’accueil
+Cette fonction a pour but de générer la page d’accueil du site : elle s’intitule “indexHandler”.
+Nous avons 2 variables permettant de vérifier si le fichier existe ou non : tmpl, err.
+Si le fichier html existe, tmpl sera exécuté. Dans le cas contraire, un message d’erreur s’affiche. 
+
+Cette fonction fait appel à “index.html”, elle permet d’afficher un menu flottant, un en-tête avec une introduction, et le contenu de la page se compose de 3 parties :
+  •	Une petite présentation de la série
+  •	Les personnages principaux
+  •	Un espace commentaire (Décoratif)
+  
+Style.css permet de donner l’apparence de la page Index.html. 
+------------------
+Page de présentation des personnages
+Cette fonction a pour but de générer la page de présentation des personnages de Rick et Morty : Elle s’intitule “PersonnagesHandler”.
+La variable personnagesData permet de récupérer les données de l’API.
+
+Nous avons 2 variables permettant de vérifier si le fichier existe ou non : tmpl, err. Si le fichier html existe, tmpl sera exécuté. Dans le cas contraire, un message d’erreur s’affiche. 
+Elle fait appel à la fonction API du package personnalisé rickEtMorty qui se trouve et conserve les informations qui sont mises en place grâce à la structure formée dans personnages.go. 
+
+Elle permet d’afficher un en-tête, et chaque personnage de la série, en montrant :
+  •	Une image
+  •	Le nom
+  •	Le statut (Mort / Vivant)
+  •	L’espèce
+  •	La planète d’origine
+  •	La localisation
+  
+Cette fonction fait appel à “personnages.html”. 
+Le style de la page se fait grâce à “personnages.css”.
+------------------
+Fonction Main
+Cette fonction a pour but d’ouvrir un serveur dans le localhost:8080 en appelant les fonctions :
+  •	IndexHandler 
+  •	PersonnagesHandler (Suite au chemin /personnages)
+  ------------------
+Conclusion
+Ce travail nous a confronté à divers défis techniques (la structuration des données et l'affichage optimisé des contenu) que nous avons su résoudre au fil du développement.
+Ce projet nous a également permis d’approfondir notre compréhension des requêtes HTTP, du parsing des données JSON et de la gestion des interactions entre GO, HTML et CSS. Nous avons notamment mis en place un système permettant de parcourir la liste des personnages et d’accéder à des informations détaillées sur chacun d’eux.
